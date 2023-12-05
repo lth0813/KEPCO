@@ -1,0 +1,14 @@
+table {
+    text-align: left;
+}
+#col1 {
+    width:80px;
+}
+input {
+    width: 150px;
+    height: 18px;
+}
+#button {
+    width:80px;
+    height:53px;
+}

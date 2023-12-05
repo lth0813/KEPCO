@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>KepcoA</title>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+        <h3>글자 수 : 0</h3>
+        <input type="text" name="title" id="title">
+    </body>
+    <script>
+        const h3 = document.querySelector('h3');
+        const input = document.querySelector('input');
+        input.addEventListener("keyup",() => {
+            const length = input.value.length;
+            h3.textContent = `글자 수 : ${length}`;
+        })
+    </script>
+</html>

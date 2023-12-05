@@ -1,0 +1,16 @@
+package ch05.sec01;
+
+import java.util.*;
+
+public class ReferenceVariableCompare {
+	public static void main(String[] args) {
+//		List<String> list = new ArrayList<String>();
+		int [] array1;
+		int [] array2;
+		
+		array1 = new int [] {1,2,3};
+		array2 = new int [] {1,2,3};
+		
+		System.out.println(array1 == array2);
+	}
+}

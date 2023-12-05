@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                const xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = callback;
+                xhr.open("post","http://ggoreb.com/ajax/html/data1.jsp"); // html page <form><input>value</input></form>
+                xhr.setRequestHeader('key','value');
+                const formData = new FormData();
+                formData.append('key','value');
+                xhr.send(formData);
+
+                function callback() {
+                    if(xhr.readyState==4) {
+                        if(xhr.status==200) {
+                            let result = xhr.response;
+                            console.log(result);
+                            // document.getElementById("content").innerHTML += result;
+                            document.querySelector("#content").innerHTML += result;
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+        <hr>
+        <div id="content"></div>
+    </body>
+</html>

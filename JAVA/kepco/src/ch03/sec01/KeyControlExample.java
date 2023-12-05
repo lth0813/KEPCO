@@ -1,0 +1,33 @@
+package ch03.sec01;
+
+import java.util.Scanner;
+public class KeyControlExample {
+	public static void main (String[] args) {
+		int speed = -5;
+		Scanner scanner = new Scanner(System.in);
+		boolean run = true;
+		while (run) {
+			System.out.println("====================");
+			System.out.println("1.증가 | 2.감속 | 3.중지");
+			System.out.println("====================");
+			System.out.print("선택 : ");
+			String val = scanner.nextLine();
+			if (val.equals("1")) {
+				speed++;
+				System.out.println("현재 스피드는 "+speed+"입니다.");
+				if (speed == 0) {
+					run = false;
+				}
+			} else if (val.equals("2")) {
+				speed--;
+				System.out.println("현재 스피드는 "+speed+"입니다.");
+				if (speed == 0) {
+					run = false;
+				}
+			} else if (val.equals("3")) {
+				run = false;
+			} 
+		}
+		System.out.println("시스템 종료 : 종료 시 스피드는 "+speed+"입니다.");
+	}
+}

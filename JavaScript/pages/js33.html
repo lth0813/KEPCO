@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                const simplePrint1 = function simplePrint(){
+                    console.log("simplePrint1");
+                }
+                const simplePrint2 = function(){
+                    console.log("simplePrint2");
+                }
+                simplePrint1();
+                simplePrint2();
+
+                const simplePrint3 = () =>{
+                    console.log("simplePrint3")
+                }
+                const add = function add(x,y) {
+                    return x + y
+                }
+                const add2 = (x,y) => x + y;
+                console.log(add2(3,4));
+            }   
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

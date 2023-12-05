@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                class Rectangle {
+                    // Rectangle(width, height) {
+                    //     this.width;
+                    //     this.height;
+                    // } 
+                    // Java 형식
+                    constructor(width,height) {
+                        this.width = width;
+                        this.height = height;
+                    }
+                };
+                const rec = new Rectangle(10, 20);
+                console.log(rec)
+                console.log(rec.width, rec.height);
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

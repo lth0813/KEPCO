@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>KepcoA</title>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+        <h1>제목</h1>
+    </body>
+    <script>
+        function createH2() {
+            const h2 = document.createElement('h2')
+            h2.textContent = "클릭했습니다."
+            document.body.appendChild(h2);
+        }
+        const obj = document.querySelector('h1');
+        obj.addEventListener("click",() => console.log("click"));
+        obj.addEventListener("click",() => createH2());
+        
+    </script>
+</html>

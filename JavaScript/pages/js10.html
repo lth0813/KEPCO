@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                let counter = 2;
+                const preIncrement = ++counter;
+                console.log(`preIncrement: ${preIncrement}`);
+                console.log(`counter: ${counter}`);
+console.log(`counter: ${counter}`);
+                const postIncrement = counter++;
+                console.log(`postIncrement: ${postIncrement}`);
+                console.log(`counter: ${counter}`);
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

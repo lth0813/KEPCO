@@ -1,0 +1,16 @@
+div {
+    width:100px;
+    height:100px;
+    margin:10px;
+}
+#a, #b {
+    background-color: green;
+}
+#c {
+    background-color: red;
+    float:right;
+}
+#d {
+    background-color: blue;
+    float:left;
+}

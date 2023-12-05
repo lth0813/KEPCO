@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        검색어 입력 : <input type="text" name="search">
+    </body>
+    <script>
+        const input = document.querySelector('[name=search]');
+        input.addEventListener("focus", (event) => {
+            let search = event.currentTarget.value;
+            input.value += '#';
+                }
+            );
+        input.addEventListener("keyup", (event) => {
+            if (event.keyCode == 32) {
+                input.value += '#';
+            }
+        });
+    </script>
+</html>

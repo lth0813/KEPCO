@@ -1,0 +1,97 @@
+.wrapper {
+    width:90vh;
+    height:90vh;
+    margin:0 auto;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display:flex;
+    flex-direction: column;
+}
+
+.container div {
+    display:flex;
+    height:4vh;
+    border:solid 1px gray;
+}
+
+.seq, .writer {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:15%;
+}
+
+.searchcount {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:10%;
+}
+
+.title {
+    display:flex;
+    align-items: center;
+    width:60%;
+}
+
+.title div {
+    border:none;
+}
+
+.titlecon {
+    width:80%;
+    display:flex;
+    justify-content: left;
+    align-items: center;
+}
+.update, .delete {
+    width:10%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.update a, .delete a {
+    display:flex;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: skyblue;
+    color:white;
+    text-decoration: none;
+    width:80%;
+    height:80%;
+    font-size: 13px;
+}
+.insertbutton {
+    display:flex;
+    justify-content: right;
+    margin:8px;
+}
+
+button {
+    color:white;
+    background-color: skyblue;
+    border:1px solid azure;
+    height:5vh;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    color:red;
+}
+
+.titlecon a {
+    text-decoration: none;
+    color:black;
+}
+
+.container div div a:hover {
+    text-decoration: none;
+    color:red;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){ 
+                let input = Number(prompt('숫자를 입력해주세요', '숫자'));
+                switch (input % 2) {
+                case 0:
+                alert('짝수입니다.');
+                break;
+                case 1:
+                alert('홀수입니다.');
+                break;
+                default:
+                alert('숫자만 입력해주세요.');
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

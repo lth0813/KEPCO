@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){ 
+                const date = new Date();
+                let hour = date.getHours();
+                let min = date.getMinutes();
+                let sec = date.getSeconds();
+                console.log(`현재시각 : ${hour}시 ${min}분 ${sec}초`)
+                if(hour < 12) {
+                    console.log('아침');
+                    document.body.style.backgroundImage = 'url(https://mblogthumb-phinf.pstatic.net/20160727_39/qhdnjs4690_1469568059418Lgycv_PNG/image_4381799551469568036990.png?type=w800)';
+                } else if (hour < 18) {
+                    console.log('점심');
+                    document.body.style.backgroundImage = 'url(https://www.popco.net/zboard/data/dica_forum_sony/2016/08/26/25a63f960f5de6a8b6bca1952c43f4bd.jpeg)';
+                } else {
+                    console.log('저녁');
+                    document.body.style.backgroundImage = 'url(https://us.123rf.com/450wm/tapsiful/tapsiful1703/tapsiful170300647/74218978-%EC%A0%80%EB%85%81-%ED%95%98%EB%8A%98.jpg)';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

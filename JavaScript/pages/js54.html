@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                const arr = [1,2,3,4,5];
+                const result = arr.reduce((pv,cv,idx,arr)=> {
+                    return pv + cv;
+                })
+                console.log(result)
+                
+            }
+
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <style>
+            img {
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <div class="container">
+            <div class="d-grid">
+                <button type="button" class="btn btn-primary btn-block">
+                    이미지 불러오기
+                </button>
+            </div>
+            <div class="target"></div>
+        </div>
+        <script>
+            let cnt = 1;
+            document.querySelector('button').addEventListener('click', () => {
+                if (document.querySelector('.target').childElementCount > 0) {
+                    const delImg = document.querySelector('img');
+                    delImg.parentNode.removeChild(delImg);
+                }
+                const img = document.createElement('img')
+                img.src = `http://ggoreb.com/images/choco/${cnt}.jpg`;
+                document.querySelector('.target').appendChild(img);
+                cnt++;
+                if (cnt > 6) {
+                    cnt = 1;
+                };
+            });
+
+        </script>
+    </body>
+</html>

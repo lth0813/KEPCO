@@ -1,0 +1,11 @@
+package ch05.sec01;
+
+public class NullPointExceptionExample {
+	public static void main(String[] args) {
+		int [] intArray = null;
+		int [] intArray2 = {1,2,3};
+		System.out.println(intArray2);
+		intArray[0] = 0;
+		System.out.println(intArray);
+	}
+}

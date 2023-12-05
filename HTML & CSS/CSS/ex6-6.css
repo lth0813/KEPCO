@@ -1,0 +1,23 @@
+div {
+    padding:30px;
+    width:900px;
+}
+#main h3 {
+    padding-left:20px;
+    border-left:solid 7px orange;
+}
+#main span {
+    font-weight: bold;
+}
+#intro {
+    border:solid 1px green;
+    border-radius:20px;
+}
+#intro h3 {
+    padding-bottom:5px;
+    border-bottom:dotted 1px #888888;
+}
+#intro span {
+    color:red;
+    font-weight: bold;
+}

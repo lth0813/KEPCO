@@ -1,0 +1,14 @@
+.contents {
+    border:solid 1px black;
+    padding:20px;
+    width:800px;
+    box-shadow: 5px 5px 20px #888888;
+}
+.red-underline {
+    color:red;
+    text-decoration: underline;
+}
+.green-bold {
+    color:green;
+    font-weight: bold;
+}

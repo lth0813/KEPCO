@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                const callback = function(location) {
+                    const lat = location.coords.latitude;
+                    const lon = location.coords.longitude;
+                    let body = document.getElementsByTagName("body");
+                    let html = "<h2>당신의 위치의 위도는 : "+lat+" 경도는 : "+lon+"입니다.</h2>";
+                    body.innerHTML = html;
+                    console.log(body)    
+                }
+                navigator.geolocation.getCurrentPosition(callback);
+            }   
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

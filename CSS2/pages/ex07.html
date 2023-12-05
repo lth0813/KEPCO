@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        td {             
+            border:solid 1px black;
+        }
+        tr:first-of-type {
+            color:red;
+            text-decoration: underline;
+            border-top:solid 3px black;
+        }
+        tr:last-of-type {
+            border-bottom:solid 3px black;
+        }
+        td:first-of-type {
+            border-left:solid 3px black;
+        }
+        td:last-of-type {
+            border-right:solid 3px black;
+        }
+        tr:nth-of-type(odd) > td:nth-of-type(odd) {
+            background-color: lightgreen;
+        }
+        tr:nth-of-type(even) > td:nth-of-type(even) {
+            background-color: lightpink;
+        }        
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <a href="../index_css.html">목록 보기</a>
+    <hr>
+    <table>
+        <tr>
+            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr>
+            <td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+        </tr>
+        <tr>
+            <td>11</td><td>12</td><td>13</td><td>14</td></td><td>15</td>
+        </tr>
+        <tr>
+            <td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+        </tr>
+        <tr>
+            <td>21</td><td>22</td><td>23</td><td>24</td><td>25</td>
+        </tr>
+        </table>
+        
+</body>
+</html>

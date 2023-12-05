@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                const array = [1,2,3,4,5];
+                console.log(array.includes(1));
+                console.log(array.includes(10));
+
+                console.log(array.indexOf(2));
+
+                const array2 = ['월','화','수','목','금','토','일'];
+                console.log(array2[array2.indexOf('수')+1]);
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

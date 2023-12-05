@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            width: 500px;
+            margin: 0 auto;
+        }
+        p {
+            background-color: rgba(207,232,220,0.4);
+            border: solid 2px rgb(79,185,227);
+            padding:10px;
+            margin:10px;
+            border-radius: 5px;
+        }
+        .relative p:nth-of-type(2) {
+            position:relative;
+            top:30px;
+            left:30px;
+            background-color: rgba(255,84,104,0.3);
+        }
+        .absolute p:nth-of-type(2) {
+            position:absolute;
+            top:330px;
+            left:30px;
+            background-color: rgba(255,84,104,0.3);
+        }
+        .fixed p:nth-of-type(2) {
+            position:fixed;
+            top:510px;
+            left:-10px;
+            background-color: rgba(255,84,104,0.3);
+        }
+        .sticky p:nth-of-type(2) {
+            position:sticky;
+            top:30px;
+            left:30px;
+            background-color: rgba(255,84,104,0.3);
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <a href="../index_css.html">목록 보기</a>
+    <hr>
+    <div class="relative">
+        <h1>relative 적용</h1>
+        <p>static</p>
+        <p>relative</p>
+        <p>static</p>
+    </div>
+    <div class="absolute">
+        <h1>absolute 적용</h1>
+        <p>static</p>
+        <p>absolute</p>
+        <p>static</p>
+    </div>
+    <div class="fixed">
+        <h1>fixed 적용</h1>
+        <p>static</p>
+        <p>fixed</p>
+        <p>static</p>
+    </div>
+    <div class="sticky">
+        <h1>sticky 적용</h1>
+        <p>static</p>
+        <p>sticky</p>
+        <p>static</p>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

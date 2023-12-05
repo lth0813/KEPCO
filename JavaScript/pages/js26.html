@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                let score = [
+                    {'name':'A','score':77},
+                    {'name':'B','score':88},
+                    {'name':'C','score':66},
+                    {'name':'D','score':55}
+                ];
+                function check(data) {
+                    const result = [];
+                    const person = {};
+                    data.forEach(value => {
+                        let person = {};
+                        person['name'] = value.name;
+                        person['score'] = value.score;
+                        if (value.score > 60) {
+                            person['pass'] = 'pass';
+                        } else {
+                            person['pass'] = 'fail';
+                        }
+                        result.push(person);
+                    });
+                    return result;
+                }
+                console.log(check(score))
+            }
+            function execute2(){
+                let score = [
+                    {'name':'A','score':77},
+                    {'name':'B','score':88},
+                    {'name':'C','score':66},
+                    {'name':'D','score':55}
+                ];
+                let result = [];
+                let person = {};
+                for (let i = 0; i < score.length; i++) {
+                    person['name'] = score[i].name;
+                    person['score'] = score[i].score;
+                    if (score[i].score > 60) {
+                        person['pass'] = 'pass'
+                    } else {
+                        person['pass'] = 'fail'
+                    }
+                    result.push(person);
+                    person = {};
+                }
+                console.log(result);
+
+                // for (let i = 0; i < score.length; i++) {
+                //     result.push(score[i].score > 60 ? "pass" : "fail");
+                // }
+                // console.log(result);
+                }
+            function execute3(){
+                let score = [
+                    {'name':'A','score':77},
+                    {'name':'B','score':88},
+                    {'name':'C','score':66},
+                    {'name':'D','score':55}
+                ];
+                function checkData(data) {
+                    let result = [];
+                    data.forEach(val => {
+                        result.push(
+                            {   name:val.name,
+                                score:val.score,    
+                                pass:val.score > 60 ? "pass" : "fail"})
+                    })
+                    return result;
+                }
+                console.log(checkData(score));
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <hr>
+        <button type="button" onClick="execute2()">실행</button>
+        <hr>
+        <button type="button" onClick="execute3()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

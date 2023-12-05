@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                const fruits = ['apple','banana','orange'];
+                
+                // '&'.join(fruits) - 파이썬
+                console.log(fruits.join('&'));
+                
+                const joinFruits = fruits.join('&');
+                
+                console.log(joinFruits.split("&"))
+
+                const arr1 = [1,2,3,4];
+                const arr2 = [4,5,6,7];
+
+                const arr3 = arr1.concat(arr2)
+                console.log(arr3);
+
+                console.log(arr3.slice(3));
+            }
+
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

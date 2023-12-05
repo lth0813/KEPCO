@@ -1,0 +1,13 @@
+div {
+    background-color: yellow;
+    font-size:15px;
+    font-weight: bold;
+    border:solid 1px black;
+    width:100px;
+    height:60px;
+}
+#b {
+    position: relative;
+    left: 60px;
+    top: 30px;
+}

@@ -1,0 +1,10 @@
+p {
+    width:400px;
+    line-height: 180%;
+}
+
+body {
+    background-image:url("../images/cat1.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+}

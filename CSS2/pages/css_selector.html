@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <style>
+        body {
+            margin-left:50px;
+        }
+        a,b,c {
+            border:solid 1px black;
+            width:50px;
+            height:40px;
+            border-radius:10px;
+            text-align:center;
+        }
+        /* a {
+            background-color: green;
+        }
+        .a {
+            background-color: green;;
+        }
+        #a {
+            background-color: red;
+        } */
+        [name] {
+            background-color: coral;
+        }
+        [name=b] {
+            background-color: green;
+        }
+        .title {
+            background-color: aqua;
+        }
+        .title.red {
+            background-color: aquamarine;
+        }
+        .title.big {
+            background-color: beige;
+        }
+        .bg {
+            background-color: yellow;
+        }
+        li {
+            font-weight: bold;
+        }
+        span {
+            color:magenta;
+        }
+        p {
+            color:blue;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <a href="../index_css.html">목록 보기</a>
+    <hr>
+    <!-- <div>
+        <a name="a">A</a>
+        <b name="b">B</b>
+        <c name="c">C</c>
+    </div> -->
+    <a1>
+        <a11>
+            <a111 class="title red big">가나다</a111>
+            <a113 class="title red small">거너더</a113>
+            <a112 class="title blue small">고노도</a112>
+            <a114 class="title blue big">구누두</a114>
+        </a11>
+    </a1>
+    <ul>
+        <li class="bg"><p>tag</p></li>
+        <li class="bg"><span>class</span></li>
+        <li><p>id</p></li>
+        <li><span>attribute</span></li>
+        <li><p>descendant / child</p></li>
+        <li><span>siblings / adjacent</span></li>
+        <li><p>pseudo</p></li>
+    </ul>
+</body>
+</html>

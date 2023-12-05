@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                const max = function x(obj) {
+                    let output = 0;
+                    for (i = 0;i < obj.length;i++) {
+                        if (output < obj[i]) {
+                            output = obj[i];
+                        }
+                    }
+                    return output;
+                }
+                console.log(max([1,2,3,4]));
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        h5[title] {background-color: red;}
+        h5[class~=header] {background-color: yellow;} /* '~'를 주면 앞은 상관없이 뒤에꺼를 다 가져옴 */ 
+        h5[class^=con] {background-color: lightblue;} /* '^'를 주면 해당 문자열로 시작하는거 다 가져옴 */ 
+        h5[class$=esc] {background-color: orange;} /* '$'를 주면 해당 문자열로 끝나는거 다 가져옴 */ 
+        h5[class*=tiv] {background-color: aqua;} /* '*'를 주면 해당 문자열이 포함 되는 것 다 가져옴 */ 
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <a href="../index_css.html">목록 보기</a>
+    <hr>
+    <h5>제목</h5>
+    <h5 title="제목">제목 1</h5> <!-- 가상의 속성 red -->
+    <h5 class="title header">제목 2</h5> <!-- header 문자열 자식포함 yellow -->
+    <h5 class="footer header">제목 2</h5>
+    <h5 class="content">제목 3</h5> <!-- 시작 문자열이 con lightblue -->
+    <h5 class="contents">제목 3</h5>
+    <h5 class="desc">제목 4</h5> <!-- 끝 문자열이 esc orange -->
+    <h5 class="aesc">제목 4</h5>
+    <h5 class="active">제목 5</h5> <!-- tiv 포함하는 문자열 aqua -->
+    <h5 class="reflective">제목 5</h5>
+</body>
+</html>

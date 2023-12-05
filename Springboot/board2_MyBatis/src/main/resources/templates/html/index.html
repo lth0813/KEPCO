@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/boardinsert.css">
+        <title>새 글 쓰기</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="inserttitle">새 글 작성</div>
+            <form action="/board/insert" method="get">
+                <div class="col">
+                    <div class="row">제목</div>
+                    <input class="title" type="text" name="title" maxlength="22">
+                </div>
+                <div class="col">
+                    <div class="row">게시자</div>
+                    <input class="writer" type="text" name="writer" maxlength="5">
+                </div>
+                <div class="col" id="content">
+                    <div class="row">내용</div>
+                    <textarea class="content" name="content"></textarea>
+                </div>
+                <div class="savebutton">
+                    <div><button type="submit">저장</button></div>
+                    <div><a href="/board/list"><button type="button">취소</button></a></div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+package ch05.sec01;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class RefCompareExample {
+	public static void main(String[] args) {
+		String refA = "임태환";
+		String refB = "임태환";
+		System.out.println(refA == refB);
+		
+		List<String> refTestA = new ArrayList<String>();
+		List<String> refTestB = new ArrayList<String>();
+		
+		refTestA.add("임태환");
+		refTestA.add("이승찬");
+		refTestB.add("임태환");
+		refTestB.add("이강욱");
+		System.out.println(refTestA.get(0).toString());
+		System.out.println(refTestB.get(0).toString());
+		System.out.println(refTestA.get(0).toString() == refTestB.get(0).toString());
+		System.out.println(refTestA.get(0) == refTestB.get(0));
+	}
+}

@@ -1,0 +1,30 @@
+* {
+    margin:0 auto;
+}
+#button {
+    width:200px;
+    height:40px;
+    text-align: center;
+    background-color: dimgray;
+    border:solid 1px white;
+    font-size:12px;
+    color:white;
+    border-radius: 20px;
+}
+#button:hover {
+    background-color: white;
+    color:dimgray;
+    border:solid 1px dimgray;
+}
+#list > li{
+    list-style-type: none;
+}
+#index, #index:visited, index:link {
+    color:skyblue;
+    text-decoration: none;
+}
+#index:hover, index:active {
+    background-color: skyblue;
+    color:white;
+    text-decoration: none;
+}

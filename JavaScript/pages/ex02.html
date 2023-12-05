@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute() {
+                var number = 10;
+                console.log(`1 number : ${number}`);
+                {
+                    let number = 100;
+                    console.log(`2 number: ${number}`);
+                }
+                console.log(`3 number: ${number}`);
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

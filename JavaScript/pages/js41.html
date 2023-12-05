@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                class Animal {
+                    constructor(name) {
+                        this.name = name;
+                        console.log();
+                    }
+                    speak() {
+                        console.log(`${this.name} make a noise.`)
+                    }
+                    behavior() {
+                        console.log(`${this.name} like a person`)
+                    }
+                }
+                class Cat extends Animal {
+                    constructor(name) {
+                        super(name);
+                    }
+                    speak() {
+                        console.log(`${this.name} mew mew`)
+                    }
+                }
+                cat = new Cat("Happy");
+                class Dog extends Animal {
+                    constructor(name) {
+                        super(name);
+                    }
+                    speak() {
+                        console.log(`${this.name} bow bow`)
+                    }
+                }
+                dog = new Dog("Cecci")
+                class wildAnimal extends Animal {
+                    constructor(name) {
+                        super(name);
+                    }
+                }
+                fox = new wildAnimal("fox")
+                cat.speak();
+                dog.speak();
+                fox.speak();
+                cat.behavior();
+                dog.behavior();
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

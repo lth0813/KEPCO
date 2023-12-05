@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){ 
+                const answer = parseInt(Math.random()*10+1);
+                let isContinue = true;
+                while(isContinue) {
+                    let number = parseInt(prompt("숫자를 맞줘보세요."));
+                    if (number == answer) {
+                        console.log(`숫자를 맞추셨습니다. 정답은 ${answer} 입니다.`)
+                        isContinue = false;
+                    } else if (number > answer) {
+                        console.log(`입력 받은 숫자가 더 큽니다.`)
+                    } else {
+                        console.log(`입력 받은 숫자가 더 작습니다.`)
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

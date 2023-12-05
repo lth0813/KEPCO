@@ -1,0 +1,14 @@
+body {
+    background-color: yellow;
+}
+h1 {
+    color:red;
+}
+p {
+    background-color: white;
+    color:blue;
+}
+table {
+    background-color: whitesmoke;
+    color:rgb(58, 54, 54)
+}

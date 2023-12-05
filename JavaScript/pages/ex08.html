@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                const map = ['가위', '바위', '보'];
+                const player = 0;
+                const com = parseInt(Math.random() * 3);
+                console.log(`player: ${map[player]}, com: ${map[com]}`);
+                if(com == 2) {
+                    let result = 'player 승';
+                    console.log(`결과: ${result}`);
+                } else if(com == 1) {
+                    let result = 'com 승';
+                    console.log(`결과: ${result}`);
+                } else {
+                    let result = '무승부';
+                    console.log(`결과: ${result}`);
+                }
+                switch(com) {
+                    case 2:
+                        console.log(`결과: player 승`);
+                        break;
+                    case 1:
+                        console.log(`결과: com 승`);
+                        break;
+                    default:
+                        console.log(`결과: 무승부`);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

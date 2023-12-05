@@ -1,0 +1,14 @@
+h2 {
+    font-family:"Nanum Gothic";
+}
+h1 {
+    font-family:"Noto Sans KR";
+}
+p {
+    font-family:"돋움"
+}
+table {
+    background-color: whitesmoke;
+    color:rgb(58,54,54);
+    border:solid 0.5px;
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <a href="http://ggoreb.com" class="move">이동</a>
+    </body>
+    <script>
+        const link = document.querySelector('.move');
+        link.addEventListener('click',(event) => {
+            window.alert("차단")
+            event.stopImmediatePropagation();
+            });
+    </script>
+</html>

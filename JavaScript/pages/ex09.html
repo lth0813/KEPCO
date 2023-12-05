@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                let total = 0;
+                let count = 0;
+                for (count; count <= 100; count+=2) {
+                    total += count;
+                }
+                console.log(total);
+            }
+            function execute2(){
+                let total = 0;
+                for (let i = 1; i <= 100; i++) {
+                    if (i % 2 == 0) {
+                        total += i;
+                    }
+                }
+                console.log(total);
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <hr>
+        <button type="button" onClick="execute2()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

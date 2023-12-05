@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){ 
+                let box = [];
+                while (box.length < 3) {
+                    let num = parseInt(Math.random()*5+1);
+                    if(box.indexOf(num) == -1) {
+                        box.push(num);
+                    }
+                }
+                box.sort((a,b) => a - b);
+                console.log(box);
+
+                const lotto = [1,2,3];
+                if(lotto == box.toString()) {
+                    console.log('맞히기 성공');
+                } else {
+                    console.log('맞히기 실패')
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

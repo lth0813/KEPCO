@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                let num = 58472;
+                num1 = (num - (num % 10000)) / 10000;
+                num2 = ((num - (num % 1000)) - (num - (num % 10000))) / 1000 ;
+                num3 = ((num - (num % 100)) - (num - (num % 1000))) / 100;
+                num4 = ((num - (num % 10)) - (num - (num % 100))) / 10 ;
+                num5 = num % 10
+                console.log(num1 + num2 + num3 + num4 + num5)
+            }
+            function execute2(){
+                let num = prompt("5자리 숫자를 입력하세요")
+                console.log(parseInt(num[0])+parseInt(num[1])+parseInt(num[2])+parseInt(num[3])+parseInt(num[4])) 
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <hr>
+        <button type="button" onClick="execute2()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function change() {
+            document.getElementById("demo").innerHTML = "싫어";
+            }
+        </script>
+        <script>
+            function change2() {
+                var a = document.getElementById("demo");
+                a.innerHTML=10+30;
+                console.log(a);
+            }
+        </script>
+    </head>
+    <a href="../index_js.html">목록 보기</a>
+    <hr>
+    <input id="first" type="text">&nbsp;
+    <input id="second" type="text"><br>
+    <button type="button" onClick="change3()">계산</button>
+    <p id="demo">결과는 : </p>
+    <hr>
+    <button type="button" onClick="change()">보여줘</button>
+    <button type="button" onClick="alert('싫어싫어')">보여줘</button>
+    <button type="button" onClick="change2()">보여줘</button>
+    <script>
+        function change3() {
+            var result = document.getElementById("demo");
+            var first_val = document.getElementById("first").value;
+            var second_val = document.getElementById("second").value;
+            var result_val = parseInt(first_val) + parseInt(second_val);
+            result.innerHTML = result_val
+        }
+    </script>
+</html>

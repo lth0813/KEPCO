@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                let food1 = prompt("첫번째 음식을 입력하세요");
+                let food2 = prompt("두번째 음식을 입력하세요");
+                let cnt = prompt("인원 수를 입력하세요");
+                let result;
+                result = (parseInt(food1)+parseInt(food2))/parseInt(cnt)
+                console.log(result)
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

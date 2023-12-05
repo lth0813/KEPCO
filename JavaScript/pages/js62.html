@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+
+                function delay(ms) {
+                    return new Promise(resolve => setTimeout(resolve,ms));
+                }
+                async function getApple() {
+                    await delay(4000);
+                    return '🍎'
+                }
+                
+                async function getKiwi() {
+                    await delay(1000);
+                    return '🥝'
+                }
+                async function getMango() {
+                    await delay(5000);
+                    return '🥭'
+                }
+
+                // function sell() {
+                //     return getApple().then(apple => {
+                //         return getKiwi().then(kiwi => {
+                //             return getMango().then(mango => {console.log(`${apple} + ${kiwi} + ${mango}`)})
+                //         })
+                //     });
+                // }
+
+                async function Sell() {
+                    const apple = await getApple();
+                    const kiwi = await getKiwi();
+                    const mango = await getMango();
+                    return `${apple}, ${kiwi}, ${mango}`;
+                }
+
+                async function Sell1() {
+                    const applePromise = getApple();
+                    const kiwiPromise = getKiwi();
+                    const mangoPromise = getMango();
+                    const apple = await applePromise;
+                    const kiwi = await kiwiPromise;
+                    const mango = await mangoPromise;
+                    return `${apple}, ${kiwi}, ${mango}`;
+                }
+
+                Sell().then(result => console.log(result));
+                Sell1().then(result => console.log(result));
+
+            }
+        
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

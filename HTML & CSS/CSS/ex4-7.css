@@ -1,0 +1,9 @@
+h1 {
+    color:purple;
+    text-shadow: 3px 3px 5px #666666;
+}
+table {
+    background-color: whitesmoke;
+    color:rgb(58,54,54);
+    border:solid 0.5px;
+}

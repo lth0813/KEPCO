@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>KepcoA</title>
+        <style>
+            span { font-weight: bold; color:red;}
+        </style>
+        <script>
+            navigator.geolocation.getCurrentPosition(
+                function (position) {
+                    const lat = position.coords.latitude
+                    const lng = position.coords.longitude;
+                    document.querySelector('#lat').innerText = lat;
+                    document.querySelector('#lng').innerText = lng;
+                }
+            )
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        위도 : <span id="lat"></span><br>
+        경도 : <span id="lng"></span>
+    </body>
+</html>

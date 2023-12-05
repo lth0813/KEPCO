@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        textarea {
+            display:none;
+        }
+        input:nth-of-type(1):checked ~ textarea:nth-of-type(1) {
+            display:inline-block;
+        }
+        input:nth-of-type(2):checked ~ textarea:nth-of-type(2) {
+            display:inline-block;
+        }
+        input:nth-of-type(3):checked ~ textarea:nth-of-type(3) {
+            display:inline-block;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <a href="../index_css.html">목록 보기</a>
+    <hr>
+    <input type='checkbox' id='a'>
+    <label for='a'>정보 1</label>
+    <textarea name='info_a' placeholder="정보 1"></textarea><br>
+    <input type='checkbox' id='b'>
+    <label for='b'>정보 2</label>
+    <textarea name='info_b' placeholder="정보 2"></textarea><br>
+    <input type='checkbox' id='c'>
+    <label for='c'>정보 3</label>
+    <textarea name='info_c' placeholder="정보 3"></textarea>
+</body>
+</html>

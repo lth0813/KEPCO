@@ -1,0 +1,19 @@
+a:link {
+    text-decoration: none;
+    color:grey;
+    font-size: 12px;
+}
+a:visited {
+    color: blue;
+}
+a:hover {
+    color:orange; font-size:15px;
+}
+a:active {
+    color:aqua; font-size:18px;
+}
+table {
+    background-color: whitesmoke;
+    color:rgb(58,54,54);
+    border:solid 0.5px;
+}

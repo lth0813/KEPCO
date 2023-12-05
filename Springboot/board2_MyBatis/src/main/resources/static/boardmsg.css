@@ -1,0 +1,137 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:50vw;
+    border:1px solid skyblue;
+    border-radius: 10px;
+    margin:0 auto;
+}
+
+.msgtitle {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    font-size: 15px;
+    font-weight:bold;
+    margin-top:10px;
+    padding-bottom:10px;
+    border-bottom: 1px solid skyblue;
+}
+
+.msgwriter {
+    display:flex;
+    justify-content: right;
+    align-items: center;
+    font-weight: bold;
+    margin-right:20px;
+    font-size: 13px;
+    width:100%;
+}
+
+.showmsg {
+    display: flex;
+    justify-content: left;
+    width:100%;
+    height:100%;
+    margin-left:20px;
+    font-size: 13px;
+    white-space: pre-line;
+}
+
+.btn {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height:5vh;
+}
+
+.btn button {
+    color:white;
+    background-color: lightgreen;
+    border-radius: 5px;
+    width:100px;
+    height:30px;
+    border:none;
+    cursor: pointer;
+    margin:5px;
+}
+.btn a {
+    color:white;
+    text-decoration: none;
+}
+.btn button:hover {
+    color:red;
+    text-decoration: none;
+}
+
+.answercontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    width:50vw;
+    border-radius: 10px;
+    margin:0 auto;
+    margin-top:10px;
+}
+.replycontainer {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border:solid 1px skyblue;
+    margin-top:8px;
+    height:100%;
+    border-radius: 10px;
+}
+.reply {
+    display:flex;
+    flex-direction: column;
+}
+.replyname, .replycontent {
+    margin:3px 0px 0px 3px;
+}
+
+.replyname {
+    font-size:13px;
+    margin-left:10px;
+}
+.replycontent {
+    font-size:13px;
+    margin-left:10px;
+    white-space: pre-line;
+}
+.replybutton {
+    display:flex;
+    justify-content: right;
+}
+
+.replyupdate button, .replydelete button{
+    background-color: lightgreen;
+    border-radius: 5px;
+    margin-right:10px;
+    width:50px;
+    height:30px;
+    border:none;
+    cursor: pointer;
+}
+.replyupdate button a, .replydelete button a {
+    color:white;
+    text-decoration: none;
+}
+.replyupdate button a:hover, .replydelete button a:hover {
+    color:red;
+    text-decoration: none;
+}
+.noreply {
+    font-size:13px;
+    margin-left:10px;
+    margin-right:10px;
+    height:30px;
+    display:flex;
+    align-items: center;
+    border:1px solid skyblue;
+    border-radius: 5px;
+}

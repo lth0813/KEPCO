@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                arr = [1,2,3,4];
+                for(i = 0;i < arr.length;i++) {
+                    console.log(arr[i]*arr[i])
+                }
+                result = arr.map((val,idx,arr)=> {
+                    return val*val;
+                })
+                console.log(result);
+
+                result2 = arr.map(x => x*x);
+                console.log(result2);
+            }
+
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                function sequence() {
+                    let seq = 0;
+                    return function () {
+                        seq++;
+                        return seq;
+                    };
+                }
+                const check = sequence();
+                window.addEventListener('blur', () => {
+                    const count = check();
+                    if(count > 5) {
+                        alert('시험 종료!');
+                        window.close();
+                    }
+                });
+            }   
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

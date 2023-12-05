@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                const lotto = [12,19,21,29,40,45];
+                let cnt = 0;
+                let box = [];
+                let cont = true;
+                while (cont) {
+                    let box = [];
+                    while (box.length < 6) {
+                        let num = parseInt(Math.random()*45+1);
+                        if(box.indexOf(num) == -1) {
+                            box.push(num);
+                            box.sort();
+                        }
+                        cnt += 1
+                        if (lotto == box.toString()) {
+                            console.log(`1등 당첨! 내 번호 : ${box}`)
+                            console.log(`성공시까지 시도 횟수 : ${cnt}번`)
+                            cont = false}
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

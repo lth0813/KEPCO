@@ -1,0 +1,111 @@
+.wrapper {
+    width:90vw;
+    height:90vh;
+    margin:0 auto;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display:flex;
+    flex-direction: column;
+}
+
+.boardlist {
+    height:10vh;
+    display:flex;
+}
+.boardlist div {
+    border:solid 1px skyblue;
+}
+.boardcontent {
+    height:7vh;
+    display:flex;
+}
+.boardcontent div {
+    border:solid 1px skyblue;
+}
+
+.seq, .writer, .date {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:15%;
+}
+
+.searchcount {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:10%;
+}
+
+.title {
+    display:flex;
+    align-items: center;
+    width:60%;
+}
+
+.title div {
+    border:none;
+}
+
+.titlecon {
+    width:80%;
+    display:flex;
+    justify-content: left;
+    align-items: center;
+}
+.update, .delete {
+    width:10%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.update a, .delete a {
+    display:flex;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: lightgreen;
+    color:white;
+    text-decoration: none;
+    width:70%;
+    height:100%;
+    font-size: 13px;
+}
+.insertbutton {
+    display:flex;
+    justify-content: right;
+    margin:8px;
+}
+
+button {
+    color:white;
+    background-color: lightgreen;
+    border:1px solid yellowgreen;
+    height:5vh;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size:15px;
+}
+button:hover {
+    color:red;
+}
+
+.titlecon a {
+    text-decoration: none;
+    color:black;
+}
+
+.container div div a:hover {
+    text-decoration: none;
+    color:red;
+}
+
+strong {
+    font-size: 20px;
+}

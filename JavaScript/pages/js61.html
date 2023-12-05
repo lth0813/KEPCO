@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                function getApple() {
+                    return new Promise((resolve) => {
+                        setTimeout(resolve('🍎'),1000);
+                    });
+                }
+                function sellApple() {
+                    return new Promise((resolve) => {
+                        getApple().then(apple => resolve(apple));
+                    });
+                }
+                sellApple().then(result => console.log(result));
+                console.log(sellApple())
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

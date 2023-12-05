@@ -1,0 +1,48 @@
+span {
+    background-color: yellow;
+    border: solid 1px black;
+    width: 100px;
+    height: 100px;
+}
+#a {
+    display: inline;
+}
+#b {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    display: block;
+}
+#c {
+    background-color: green;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+.main {
+    width: 100px;
+    height: 100px;
+    background-color: burlywood;
+    display: inline;
+}
+#main-1 {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    display: flex;
+}
+#main-2 {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    display: flex;
+}
+#main-3 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    display: flex;
+}
+.sub {
+    display: inline;
+}

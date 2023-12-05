@@ -1,0 +1,16 @@
+div {
+    border:solid 1px orange;
+    padding:20px;
+    margin:0 auto;
+    width:400px;
+}
+img {
+    width:200px;
+    height:250px;
+}
+#box2 {
+    text-align: right;
+}
+#box3 {
+    text-align: center;
+}

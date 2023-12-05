@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                const callback = function(){
+                    const figure = document.querySelector('.figure');
+                    const label = document.querySelector(".label");
+                    figure.style.backgroundColor = "red";
+                    figure.style.borderRadius = "100px";
+                    label.innerHTML = "<h2>모습 변경</h2>";
+                }
+                setTimeout(callback, 2000);
+            }   
+        </script>
+        <style>
+            .figure {background-color: green;
+            width:100px;
+            height:100px;}
+        </style>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+        <div>
+            <div class="label"></div>
+            <div class="figure"></div>
+        </div>
+    </body>
+</html>

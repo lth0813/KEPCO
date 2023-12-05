@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>KepcoA</title>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+        <input type="checkbox">
+        <span>타이머 활성화</span>
+        <h1></h1>
+        <button type="button">타이머 리셋</button>
+    </body>
+    <script>
+        let [timer, timerId] = [0, 0];
+        const h1 = document.querySelector('h1');
+        const checkbox = document.querySelector('input');
+        checkbox.addEventListener('change',(event) => {
+            if (event.currentTarget.checked) {
+                timerId = setInterval(() => {
+                    timer += 1;
+                    h1.textContent = `${timer}초`;
+                }, 1000);
+            } else {
+                clearInterval(timerId);
+            }
+        });
+        const reset = document.querySelector('button');
+        reset.addEventListener('click', () => {
+            [timer, timerId] = [0,0];
+            document.querySelector('h1').textContent = '0초'
+        })
+    </script>
+</html>

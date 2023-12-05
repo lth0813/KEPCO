@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div {
+            width:100px;
+            height:100px;
+            position:absolute;
+            color:white;
+        }
+        #top {
+            background-color: red;
+            z-index: 3;
+        }
+        #center {
+            background-color: green;
+            top:100px;
+            left:50px;
+            z-index: 2;
+        }
+        #bottom {
+            background-color: blue;
+            top:150px;
+            left:100px;
+            z-index: 1;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <a href="../index_css.html">목록 보기</a>
+    <hr>
+    <div id="top">top</div>
+    <div id="center">center</div>
+    <div id="bottom">bottom</div>
+</body>
+</html>

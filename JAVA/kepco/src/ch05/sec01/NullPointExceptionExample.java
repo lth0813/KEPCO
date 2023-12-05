@@ -1,0 +1,23 @@
+package ch05.sec01;
+
+public class NullPointExceptionExample {
+	public static void main(String[] args) {
+//		int [] intArray = null;
+//		int [] intArray2 = {1,2,3};
+//		System.out.println(intArray2);
+//		intArray[0] = 0;
+//		System.out.println(intArray);
+		
+//		int a = null;
+		String c = "cba";
+		String a = new String();
+		a = "abc";
+		System.out.println(a.hashCode());
+		String b = new String();
+		b = "abc";
+		System.out.println(b.hashCode());
+		System.out.println(a == b);
+		System.out.println(b);
+		System.out.println(c);
+	}
+}

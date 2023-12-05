@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                function printAll(...args){
+                    for(let i = 0; i < args.length; i++) {
+                        console.log(args[i]);
+                    }
+                    for(const arg of args) {
+                        console.log(arg);
+                    }
+                    args.forEach((arg) => {console.log(arg);});
+                }
+                printAll('A','B','C','D');
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

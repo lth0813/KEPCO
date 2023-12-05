@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                const promise = new Promise((resolve,reject) => {
+                    console.log("작업중.....!");
+                    setTimeout(()=> {
+                        resolve('작업완료');
+                    },5000);
+                });
+                console.log(promise)
+
+                promise.then((value) => {
+                    console.log(value);}).catch((error) => {
+                        console.log(error);}).finally(()=>{
+                            console.log('finished!!');
+                });
+                console.log('next')
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+table {
+    border-collapse: collapse;
+    text-align: center;
+    width:600px;
+    font-size:12px;
+    border-top:solid 3px orange;
+}
+th {
+    background-color: lightgray;
+}
+tr, th, td {
+    border:solid 1px gray;
+}
+#col1, #col2, #col3 {
+    width:20%;
+}
+#col4 {
+    width:40%;
+}

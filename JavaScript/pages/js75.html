@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>KepcoA</title>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+        <img src="http://placekitten.com/300/300" alt="">
+    </body>
+    <script>
+        const imgs = document.querySelectorAll('img');
+        imgs.forEach((img) => {
+            img.addEventListener("contextmenu",(event) => {
+                event.preventDefault()
+            });
+        });
+    </script>
+</html>

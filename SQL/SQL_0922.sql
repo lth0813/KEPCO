@@ -1,0 +1,140 @@
+-- 데이터 입력
+CREATE TABLE BOARD (
+ SEQ_NO INT
+ , TITLE VARCHAR(50)
+ , CONTENT VARCHAR(100)
+ , CODE VARCHAR(1)
+);
+INSERT INTO BOARD VALUES (1, '첫번째 공지사항', '공지사항 입니다', 'N');
+INSERT INTO BOARD VALUES (2, '첫번째 FAQ', 'FAQ 입니다', 'F');
+INSERT INTO BOARD VALUES (3, '첫번째 자료', '자료실 입니다', 'D');
+INSERT INTO BOARD VALUES (4, '첫번째 QnA', 'QnA 입니다', 'Q');
+INSERT INTO BOARD VALUES (5, '1번 게시글', '1번 게시글입니다', 'A');
+INSERT INTO BOARD VALUES (6, '2번 게시글', '두번째 게시글입니다', 'A');
+
+CREATE TABLE BOARD_CODE (
+ CODE VARCHAR(1)
+ , CODE_EXP VARCHAR(100)
+ , USE_YN VARCHAR(1)
+);
+INSERT INTO BOARD_CODE VALUES ('N', '공지사항', 'Y');
+INSERT INTO BOARD_CODE VALUES ('F', 'FAQ', 'Y');
+INSERT INTO BOARD_CODE VALUES ('D', '자료실', 'N');
+INSERT INTO BOARD_CODE VALUES ('Q', 'QnA', 'Y');
+INSERT INTO BOARD_CODE VALUES ('A', '일반게시판', 'Y');
+
+-- JOIN
+-- 1. BOARD와 BOARD_CODE 테이블 CODE를 기준으로 조인
+SELECT SEQ_NO, TITLE, CONTENT, B.CODE, CODE_EXP
+FROM board B, board_code BC
+WHERE B.CODE = BC.CODE;
+-- 2. BOARD와 BOARD_CODE 테이블 CODE를 기준으로 조인하면서 게시판 구분 코드가 Q인 레코드는 제외하여 조회
+SELECT SEQ_NO, TITLE, CONTENT, B.CODE, CODE_EXP
+FROM board B, board_code BC
+WHERE B.CODE = BC.CODE AND B.CODE != 'Q';
+-- 3. BOARD와 BOARD_CODE 테이블 CODE를 기준으로 조인하면서 게시판 사용여부가 'Y'인 레코드만 조회
+SELECT SEQ_NO, TITLE, CONTENT, B.CODE, CODE_EXP
+FROM board B, board_code BC
+WHERE B.CODE = BC.CODE AND USE_YN = 'Y';
+-- 추가 데이터 입력
+CREATE TABLE BOARD_FILE (
+ FILE_SEQ_NO INT
+ , BOARD_SEQ_NO INT
+ , FILE_NAME VARCHAR(50)
+ , FILE_SIZE INT
+);
+INSERT INTO BOARD_FILE VALUES (1, 1, '공지사항.hwp', 12345678);
+INSERT INTO BOARD_FILE VALUES (2, 2, 'FAQ자료.zip', 10000000);
+INSERT INTO BOARD_FILE VALUES (3, 5, 'readme.txt', 1000);
+-- OUTER JOIN
+-- 1. BOARD 테이블 SEQ_NO와 BOARD_FILE 테이블 BOARD_SEQ_NO(그냥) 조인
+SELECT SEQ_NO, TITLE, FILE_SEQ_NO, FILE_NAME, FILE_SIZE
+FROM board B, board_file BF
+WHERE B.SEQ_NO = BF.BOARD_SEQ_NO;
+-- 2. BOARD 테이블 SEQ_NO와 BOARD_FILE 테이블 BOARD_SEQ_NO LEFT OUTER 조인
+SELECT SEQ_NO, TITLE, FILE_SEQ_NO, FILE_NAME, FILE_SIZE
+FROM board B LEFT JOIN board_file BF
+ON B.SEQ_NO = BF.BOARD_SEQ_NO;
+
+-- 3. BOARD 테이블 SEQ_NO와 BOARD_FILE 테이블 BOARD_SEQ_NO LEFT OUTER 조인, BOARD 테이블 CODE와 BOARD_CODE 테이블 CODE 조인
+SELECT SEQ_NO, TITLE, FILE_SEQ_NO, FILE_NAME, FILE_SIZE, CODE_EXP, USE_YN
+FROM board_code BC, board B LEFT JOIN board_file BF
+ON B.SEQ_NO = BF.BOARD_SEQ_NO
+WHERE B.CODE = BC.CODE;
+
+SELECT B.SEQ_NO, B.TITLE, BF.FILE_SEQ_NO, BF.FILE_NAME, BF.FILE_SIZE, BC.CODE_EXP, BC.USE_YN
+FROM BOARD B LEFT OUTER JOIN BOARD_FILE BF
+ON B.SEQ_NO = BF.BOARD_SEQ_NO
+JOIN BOARD_CODE BC
+ON B.CODE = BC.CODE;
+
+-- 방문자 통계
+-- 1. 2017년 5월 ~ 2020년 1월 전체 방문자 수
+SELECT COUNT(*)
+FROM visitor_tb
+WHERE VST_TIME BETWEEN '2017-05-01' AND '2020-01-31';
+-- 2. 방문횟수가 2번 이상인 IP 현황
+SELECT IP_ADDRESS, COUNT(IP_ADDRESS)
+FROM visitor_tb
+GROUP BY IP_ADDRESS
+HAVING COUNT(IP_ADDRESS) >= 2
+ORDER BY COUNT(IP_ADDRESS) DESC;
+-- 3. 연도별 방문자 현황
+SELECT DATE_FORMAT(VST_TIME, '%Y'), COUNT(*)
+FROM visitor_tb
+GROUP BY DATE_FORMAT(VST_TIME, '%Y');
+-- 4. 전체기간 중 월별 방문자 현황
+SELECT DATE_FORMAT(VST_TIME, '%m'), COUNT(*)
+FROM visitor_tb
+GROUP BY DATE_FORMAT(VST_TIME, '%m')
+ORDER BY COUNT(*) DESC;
+-- 5. 방문경로별 방문자 현황
+SELECT DATE_FORMAT(VST_TIME, '%Y-%m') '방문월', 
+CASE
+WHEN VST_PATH = '1' THEN '검색'
+ELSE '부산관광공사'
+END AS '방문경로', COUNT(*) '방문자수'
+FROM visitor_tb
+GROUP BY DATE_FORMAT(VST_TIME, '%Y-%m'), VST_PATH
+ORDER BY DATE_FORMAT(VST_TIME, '%Y-%m');
+
+-- DELICIOUS BUSAN
+-- 1. 자주 검색된 태그 상위 2개 확인
+-- ('해운대', '서면')
+SELECT TAG_NAME
+FROM tag_tb
+ORDER BY HIT_CNT DESC
+LIMIT 0,2;
+-- 2. 가장 많이 검색된 태그를 사용하는 매장 개수 확인
+-- 44
+SELECT COUNT(*)
+FROM tag_tb TT, shop_tag_tb STT
+WHERE TT.TAG_ID = STT.TAG_ID AND
+HIT_CNT IN
+		 (SELECT MAX(HIT_CNT)
+		  FROM tag_tb);
+SELECT COUNT(*)	 
+FROM tag_tb TT, shop_tag_tb STT
+WHERE TT.TAG_ID = STT.TAG_ID AND 
+HIT_C NT = 
+		  (SELECT HIT_CNT
+		   FROM tag_tb
+		   ORDER BY HIT_CNT DESC
+			LIMIT 0,1);
+
+-- 3. '거북선횟집' 매장에 연결된 모든 태그명 확인
+-- 부산, 해운대구, 해운대, 미포, 거북선횟집, 횟집, 모듬회, 바다보이는집, 단체, 모임, 한식
+SELECT TAG_NAME
+FROM tag_tb TT, shop_tag_tb STT, shop_tb ST
+WHERE TT.TAG_ID = STT.TAG_ID AND STT.SHOP_ID = ST.SHOP_ID AND SHOP_NAME = '거북선횟집';
+-- 4. '한구름' 사용자가 즐겨찾기로 등록된 매장명과 매장의 설명 확인
+-- 디딤돌 싱싱한 굴과 고소한 보쌈 전문점 / 해림 꽃새우 회 전문점
+SELECT SHOP_NAME, SHOP_DESC
+FROM shop_tb ST, user_tb UT, favorite_tb FT
+WHERE ST.SHOP_ID = FT.SHOP_ID AND FT.USER_ID = UT.USER_ID AND USER_NAME = '한구름';
+-- 5. 아이디가 64인 매장을 즐겨찾기로 등록된 사용자의 이름과 이메일 주소 확인
+-- 김명 windo@gmail.com / 양말 liox2xoil@nate.com
+SELECT USER_NAME, EMAIL
+FROM shop_tb ST, user_tb UT, favorite_tb FT
+WHERE ST.SHOP_ID = FT.SHOP_ID AND FT.USER_ID = UT.USER_ID AND ST.SHOP_ID = '64';
+

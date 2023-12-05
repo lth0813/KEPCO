@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function execute(){
+                class User {
+                    constructor(firstName,lastName,age) {
+                        this.firstName = firstName;
+                        this.lastName = lastName;
+                        this.age = age;
+                    }
+                    get age() {
+                        return this._age;
+                    }
+                    set age(value) {
+                        if (value < 0) {
+                            this._age = 0;
+                        } else {
+                        this._age = value;
+                        }
+                    }
+                }
+                const thlee = new User('TaeHwan','Lim',-33);
+                console.log(`${thlee.firstName},${thlee.lastName},${thlee.age}`)
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index_js.html">목록 보기</a>
+        <hr>
+        <button type="button" onClick="execute()">실행</button>
+        <p>F12를 눌러서 Console탭을 확인하세요.</p>
+    </body>
+</html>

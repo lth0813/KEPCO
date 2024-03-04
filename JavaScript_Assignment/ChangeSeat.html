@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #projector {
+                background-color: rgb(230, 230, 230);
+                border: 2px solid black;
+                padding: 10px; border-radius: 5px;
+                width: 30%;
+                text-align: center;
+                margin-left:30px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            #professor {
+                background-color: burlywood;
+                border: 2px solid whitesmoke;
+                padding: 10px; border-radius: 5px;
+                width: 30%;
+                text-align: center;
+                margin: 10px auto;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            div > div {
+                text-align: center;
+                background-color: burlywood;
+                border: 2px solid whitesmoke;
+                padding: 10px; border-radius: 5px;
+            }
+            .wrapper {
+                display: grid; grid-gap: 10px;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+                grid-template-rows: 80px 80px 80px 80px;
+            }
+            #empty {
+                border: none;
+                background-color: white;
+            }
+            #seat {
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                font-weight: bold;
+            }
+            span {
+                color:blue;
+                font-weight: bold;
+            }
+            </style>
+    </head>
+    <body>
+        <div id="projector">프로젝터</div>
+        <div id="professor">교탁</div>
+        <div class="wrapper">
+            <div id="seat"></div> <div id="empty"></div> <div id="seat"></div> <div id="seat"></div> <div id="seat"></div> <div id="empty"></div> <div id="seat"></div> <div id="empty"></div>
+            <div id="seat"></div> <div id="empty"></div> <div id="seat"></div> <div id="empty"></div> <div id="seat"></div> <div id="empty"></div> <div id="seat"></div> <div id="seat"></div>
+            <div id="seat"></div> <div id="empty"></div> <div id="empty"></div> <div id="seat"></div> <div id="seat"></div> <div id="empty"></div> <div id="seat"></div> <div id="empty"></div>
+            <div id="seat"></div> <div id="empty"></div> <div id="seat"></div> <div id="seat"></div> <div id="seat"></div> <div id="empty"></div> <div id="seat"></div> <div id="empty"></div>
+        </div>
+        <hr>
+        <p>자리를 재배치하시려면 <span>교탁</span>을 클릭해주세요.</p>
+        <p>자리를 원상태로 되돌리시려면 <span>프로젝터</span>를 클릭해주세요.</p>
+    </body>
+    <script>
+        let persons = null;
+        persons = [
+            '김태영', '이재빈', '김나영', '김담향', '김건우', 
+            '김동일', '조정아', '이윤주', '강다솜', '명하영',
+            '이승찬', '김수호', '윤여록', '조가영',
+            '유준하', '강건희', '장성호', '박정현', '임태환'
+            ];
+        document.querySelector('#projector').addEventListener('click', () => {
+        if(confirm('자리를 원 상태로 되돌리시겠습니까?')) {
+            persons = [
+            '김태영', '이재빈', '김나영', '김담향', '김건우', 
+            '김동일', '조정아', '이윤주', '강다솜', '명하영',
+            '이승찬', '김수호', '윤여록', '조가영',
+            '유준하', '강건희', '장성호', '박정현', '임태환'
+            ];
+            for(let i = 1; i <= persons.length; i++) {
+                document.querySelectorAll('#seat')[i-1].innerHTML = persons[i-1];
+            }
+        }
+        });
+        document.querySelector('#professor').addEventListener('click', () => {
+        if(confirm('자리를 재배치 하시겠습니까?')) {
+            persons.sort(() => Math.random() - 0.5);
+            for(let i = 1; i <= persons.length; i++) {
+                document.querySelectorAll('#seat')[i-1].innerHTML = persons[i-1];
+            }
+        }
+        });
+        </script>
+</html>

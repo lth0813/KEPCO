@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .wrapper {
+                text-align: center;
+                padding:10px;
+                border:solid 3px gray;
+                background-color: lightgray;
+                max-width: 600px;
+                margin:30px auto;
+            }
+            h1 {
+                font-size: 40px;
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-left:30px;
+                margin-right:30px;
+                font-size:50px;
+                font-family: 'LAB디지털';
+            }
+            .header {
+                display: grid; grid-gap:10px;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-rows: 100px 100px;
+                margin-bottom:10px;
+            }
+            .header div ~ div, .number div, .footer div {
+                cursor: pointer;
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                font-size: 30px;
+                font-weight: bold;
+            }
+            .number {
+                display: grid; grid-gap: 10px;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 100px 100px 100px;
+                margin-bottom:10px;
+            }
+            .footer {
+                display: grid; grid-gap: 10px;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                grid-template-rows: 100px;
+            }
+            .header div ~ div, #btn, .del, #sign {
+                background-color: dimgray;
+                color:white;
+                padding: 10px; 
+                border-radius: 5px;
+            }
+            .clear {
+                background-color: rgb(177, 22, 22);
+                color:white;
+                border-radius: 5px;
+            }
+            .calculate {
+                background-color: rgb(66, 66, 196);
+                color:white;
+                border-radius: 5px;
+            }
+            .zero {
+                grid-column: 3/5;
+            }
+        
+            #status {
+                display:flex;
+                flex-direction: row;
+                justify-content: space-between;
+                grid-column: 1 / 5;
+                background-color: white;
+                border: solid 2px gray;
+            }
+            @font-face {
+                font-family: 'LAB디지털';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/LAB디지털.woff') format('woff');
+                font-weight:normal;
+                font-style: normal;
+            }
+            p {
+                margin:3px;
+            }
+            </style>
+            
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="header">
+                <div id="status"><h1 class="scr"></h1><h1 class="result"></h1></div>
+                <div id="sign">+</div><div id="sign">-</div><div id="sign">*</div><div id="sign">/</div>
+            </div>
+            <div class="number">
+                <div id="btn">7</div><div id="btn">8</div><div id="btn">9</div>
+                <div id="btn">4</div><div id="btn">5</div><div id="btn">6</div>
+                <div id="btn">1</div><div id="btn">2</div><div id="btn">3</div>
+            </div>
+            <div class="footer">
+                <div class="clear">C</div><div class="del">Del</div><div id="btn" class="zero">0</div><div id="sign">.</div><div class="calculate">=</div>
+            </div>
+        </div>
+        <hr>
+        <p style="font-weight:bold">V1.1 업데이트 내역</p>
+        <p>Del 키 추가</p>
+        <p>0 으로 나눴을 때 기능 추가</p>
+        <p>에러 표시 기능 추가</p>
+        <p style="font-weight:bold;">V1.2 업데이트 내역</p>
+        <p>. 키 추가</p>
+        <p>키보드 입력 추가</p>
+        <p>최대 자릿수 설정</p>
+    </body>
+    <script>
+        const scr = document.querySelector('.scr');
+        const res = document.querySelector('.result');
+        const buttons = document.querySelectorAll('#btn');
+        const signs = document.querySelectorAll('#sign');
+        const clear = document.querySelector('.clear');
+        const calc = document.querySelector('.calculate');
+        const del = document.querySelector('.del');
+
+        function typebtn() {
+                    if (res.innerText.length > 0) {
+                        scr.innerText = '';
+                        res.innerText = '';
+                        }
+                    if (scr.innerText.length < 10) {
+                        text = event.target.innerHTML;
+                        scr.innerHTML += text;
+                    } else {
+                        scr.innerText = scr.innerText.substring(0,12);
+                    }
+                }
+        function typesign() {
+                    if (res.innerText.length > 0) {
+                        scr.innerText = res.innerText;
+                        res.innerText = '';
+                    }
+                    if (scr.innerText.length < 10) {
+                        text = event.target.innerHTML;
+                        scr.innerHTML += text;
+                    } else {
+                        scr.innerText = scr.innerText.substring(0,12);
+                    }
+                }
+        function typeclear() {
+                    scr.innerHTML = '';
+                    res.innerHTML = '';
+                }
+        function typecalc() {
+                try { 
+                    if (eval(scr.innerText) == Infinity | eval(scr.innerText) == -Infinity) {
+                        res.innerText = `0 DIV ERR`
+                        setTimeout(() => res.innerText = '',2000);
+                    } else {
+                        res.innerText = eval(scr.innerText);
+                    }
+                } catch {
+                    res.innerText = 'ERROR';
+                    setTimeout(() => res.innerText = '',500);
+                    setTimeout(() => res.innerText = 'ERROR',750);
+                    setTimeout(() => res.innerText = '',1000);
+                    setTimeout(() => res.innerText = 'ERROR',1250);
+                    setTimeout(() => res.innerText = '',1500);
+                }
+                if (res.innerText.length > 9) {
+                    res.innerText = res.innerText.substring(0,9);
+                }
+            }
+        function typedel() {
+                if (res.innerText.length > 0) {
+                    scr.innerText = res.innerText;
+                    res.innerText = '';
+                }
+                scr.innerText = scr.innerText.substring(0,scr.innerText.length-1);    
+            }
+
+        for(btn of buttons) { btn.addEventListener('click', typebtn) }
+        
+        for(sign of signs) { sign.addEventListener('click', typesign) }
+        
+        clear.addEventListener('click', typeclear)
+        
+        calc.addEventListener('click', typecalc)
+        
+        del.addEventListener('click', typedel)
+
+        const nkeylist = {48:0,49:1,50:2,51:3,52:4,53:5,54:6,55:7,56:8,57:9}
+        const skeylist = {43:'+',45:'-',42:'*',47:'/',46:'.',}
+
+        document.body.addEventListener('keypress', (event) => {
+            if (event.keyCode in skeylist) {    
+                for (key in skeylist) {
+                    if (res.innerText.length > 0) {
+                            scr.innerText = res.innerText;
+                            res.innerText = '';
+                    }
+                    if (scr.innerText.length < 10) {
+                        if (event.keyCode == key) {
+                            text = skeylist[event.keyCode];
+                            scr.innerHTML += text;
+                        }
+                    } else {
+                        scr.innerText = scr.innerText.substring(0,12);
+                    }
+                }
+            } else if (event.keyCode in nkeylist) {
+                for (key in nkeylist) {
+                    if (res.innerText.length > 0) {
+                            scr.innerText = '';
+                            res.innerText = '';
+                    }
+                    if (scr.innerText.length < 10) {
+                        if (event.keyCode == key) {
+                            text = nkeylist[event.keyCode];
+                            scr.innerHTML += text;
+                        }
+                    } else {
+                        scr.innerText = scr.innerText.substring(0,12);
+                    }
+                }
+            } else if (event.keyCode == 99) {
+                typeclear();
+            } else if (event.keyCode == 13 | event.keyCode == 61) {
+                typecalc();
+            } 
+        })
+        document.body.addEventListener('keyup', (event) => {
+            if (event.keyCode == 46 | event.keyCode == 8) {
+                typedel();
+            }
+        })
+    </script>
+</html>
